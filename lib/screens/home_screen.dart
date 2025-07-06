@@ -5,6 +5,8 @@ import '../screens/property_detail_screen.dart';
 import '../screens/cart_screen.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -13,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController _searchController = TextEditingController();
   List<RentalProperty> _allProperties = [];
   List<RentalProperty> _filteredProperties = [];
-  List<RentalProperty> _cartItems = [];
+  final List<RentalProperty> _cartItems = [];
   String _searchQuery = '';
 
   @override
@@ -27,56 +29,47 @@ class _HomeScreenState extends State<HomeScreen> {
     _allProperties = [
       RentalProperty(
         id: '1',
-        name: 'Cozy Mountain Cabin',
-        location: 'Aspen, Colorado',
+        name: 'Rumah Mewah',
+        location: 'Jakarta, Jakarta',
         price: 150.0,
-        imageUrl: 'https://picsum.photos/400/300?random=1',
+        imageUrl: 'assets/images/home1.jpeg',
         description:
-            'A beautiful mountain cabin with stunning views and modern amenities.',
+            'Sebuah rumah besar yang dilengkapi dengan kolam renang',
       ),
       RentalProperty(
         id: '2',
-        name: 'Beachfront Villa',
-        location: 'Malibu, California',
+        name: 'Apartemen Tinggi',
+        location: 'Alam Sutera, Tangerang Selatan',
         price: 300.0,
-        imageUrl: 'https://picsum.photos/400/300?random=2',
+        imageUrl: 'assets/images/home2.webp',
         description:
-            'Luxurious beachfront villa with private beach access and infinity pool.',
+            'Apartemen yang dilengkapi oleh kolam renang, gym, dan perpustakaan',
       ),
       RentalProperty(
         id: '3',
-        name: 'Urban Loft',
-        location: 'New York, NY',
+        name: 'Hotel Luas',
+        location: 'Lampung',
         price: 200.0,
-        imageUrl: 'https://picsum.photos/400/300?random=3',
+        imageUrl: 'assets/images/home3.jpg',
         description:
-            'Modern loft in the heart of Manhattan with city skyline views.',
+            'Sebuah hotel dengan fasilitas yang banyak dan super luas',
       ),
       RentalProperty(
         id: '4',
-        name: 'Countryside Cottage',
-        location: 'Tuscany, Italy',
+        name: 'Hotel Murah',
+        location: 'Jakrta',
         price: 120.0,
-        imageUrl: 'https://picsum.photos/400/300?random=4',
+        imageUrl: 'assets/images/home4.jpg',
         description:
-            'Charming cottage surrounded by vineyards and rolling hills.',
+            'Sebuah hotel dengan harga yang sangat kompetitif',
       ),
       RentalProperty(
         id: '5',
-        name: 'Desert Oasis',
-        location: 'Scottsdale, Arizona',
+        name: 'Tempat Istirahat',
+        location: 'Yogyakarta',
         price: 180.0,
-        imageUrl: 'https://picsum.photos/400/300?random=5',
-        description: 'Modern desert retreat with pool and mountain views.',
-      ),
-      RentalProperty(
-        id: '6',
-        name: 'Lake House',
-        location: 'Lake Tahoe, Nevada',
-        price: 220.0,
-        imageUrl: 'https://picsum.photos/400/300?random=6',
-        description:
-            'Peaceful lakehouse with private dock and mountain surroundings.',
+        imageUrl: 'assets/images/home5.jpg',
+        description: 'Tempat peristirahatan yang ideal saat sedang berperjalann jauh',
       ),
     ];
   }
@@ -289,8 +282,7 @@ class PropertyCard extends StatelessWidget {
   final RentalProperty property;
   final VoidCallback onTap;
 
-  const PropertyCard({Key? key, required this.property, required this.onTap})
-    : super(key: key);
+  const PropertyCard({super.key, required this.property, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -309,8 +301,8 @@ class PropertyCard extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
-              child: Image.network(
-                property.imageUrl,
+              child: Image(
+                image: AssetImage(property.imageUrl),
                 width: double.infinity,
                 height: 200,
                 fit: BoxFit.cover,
@@ -320,7 +312,7 @@ class PropertyCard extends StatelessWidget {
                     height: 200,
                     color: Colors.grey[300],
                     child: Icon(
-                      Icons.image_not_supported,
+                      Icons.home,
                       size: 48,
                       color: Colors.grey[600],
                     ),
@@ -360,6 +352,15 @@ class PropertyCard extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    '\$${property.price.toStringAsFixed(0)}/night',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.green[600],
+                    ),
                   ),
                 ],
               ),

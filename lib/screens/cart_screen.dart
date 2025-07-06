@@ -7,11 +7,11 @@ class CartScreen extends StatelessWidget {
   final VoidCallback onClearCart;
 
   const CartScreen({
-    Key? key,
+    super.key,
     required this.cartItems,
     required this.onRemoveFromCart,
     required this.onClearCart,
-  }) : super(key: key);
+  });
 
   double get totalPrice {
     return cartItems.fold(0.0, (sum, item) => sum + item.price);
@@ -166,8 +166,7 @@ class CartItemCard extends StatelessWidget {
   final RentalProperty property;
   final VoidCallback onRemove;
 
-  const CartItemCard({Key? key, required this.property, required this.onRemove})
-    : super(key: key);
+  const CartItemCard({super.key, required this.property, required this.onRemove});
 
   @override
   Widget build(BuildContext context) {
@@ -184,7 +183,7 @@ class CartItemCard extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: Image.network(
+              child: Image.asset(
                 property.imageUrl,
                 width: 80,
                 height: 80,
@@ -195,7 +194,7 @@ class CartItemCard extends StatelessWidget {
                     height: 80,
                     color: Colors.grey[300],
                     child: Icon(
-                      Icons.image_not_supported,
+                      Icons.home,
                       color: Colors.grey[600],
                     ),
                   );

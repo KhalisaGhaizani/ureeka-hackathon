@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "847110939180",
+    "project_id": "ureeka-88133",
+    "storage_bucket": "ureeka-88133.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847110939180:android:142cb4fe30f7bfc266a789",
+        "android_client_info": {
+          "package_name": "com.example.ureeka_hackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847110939180-rj16hs83rdid7slpbtfllu244pb5bnno.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNTclCZ5hxt21a5p6xie4rslGLL6qKJq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847110939180-rj16hs83rdid7slpbtfllu244pb5bnno.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "847110939180-bajiafnfkifac3jp96j2p7aqv56mllbi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ureekaHackathon"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

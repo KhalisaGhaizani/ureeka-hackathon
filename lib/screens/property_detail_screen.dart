@@ -6,10 +6,10 @@ class PropertyDetailScreen extends StatelessWidget {
   final Function(RentalProperty) onAddToCart;
 
   const PropertyDetailScreen({
-    Key? key,
+    super.key,
     required this.property,
     required this.onAddToCart,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class PropertyDetailScreen extends StatelessWidget {
                   return Container(
                     color: Colors.grey[300],
                     child: Icon(
-                      Icons.image_not_supported,
+                      Icons.home,
                       size: 48,
                       color: Colors.grey[600],
                     ),
@@ -129,7 +129,7 @@ class PropertyDetailScreen extends StatelessWidget {
                         onAddToCart(property);
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black87,
+                        backgroundColor: Colors.blue[600],
                         foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),
